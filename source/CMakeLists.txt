@@ -5,3 +5,9 @@ add_executable(tests tests.cpp)
 
 # Kommentieren Sie die folgenden Zeilen fuer die Aufgabe `mile_to_kilometer` aus
 #add_executable(mile_to_kilometer mile_to_kilometer.cpp)
+
+add_executable(1.3 1.3.cpp)
+
+add_executable(1.4-1.7 1.4-1.7.cpp)
+
+
