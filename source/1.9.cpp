@@ -22,7 +22,7 @@ TEST_CASE("describe_checksum", "[checksum]")
 {
     REQUIRE(checksum(34) == 7);
     REQUIRE(checksum(78) == 15);
-    REQUIRE(checksum(145) == 10);
+    REQUIRE(checksum(120995) == 26);
 }
 
 int main(int argc, char* argv[])
