@@ -4,7 +4,8 @@
 
 int main()
 {
-    
+    int i; // deklaration
+    i = 100; // definition 
 }
 
 
