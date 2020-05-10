@@ -1,6 +1,6 @@
 #include <iostream>
 #define CATCH_CONFIG_RUNNER
-#include <catch.hpp>
+#include "catch.hpp"
 #include <cmath>
 
 int checksum(int a)
