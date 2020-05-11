@@ -1,31 +1,29 @@
-#include <iostream>
 #define CATCH_CONFIG_RUNNER
-#include "catch.hpp"
-#include <cmath>
+#include <catch.hpp>
 
-int checksum(int a)
-{
-    int quersumme = 0;
 
-    while (a > 0)
-    {
-        quersumme += a % 10;
-        a /= 10;
+static int checksum(int n) {
+    int sum = 0;
+    if (n < 1) {
+        return -1;
     }
-
-
-    return 0;
+    while (n != 0) {
+        sum = sum + n % 10;
+        n = n / 10;
+    }
+    return sum;
 }
 
 TEST_CASE("describe_checksum", "[checksum]")
 {
     REQUIRE(checksum(34) == 7);
     REQUIRE(checksum(78) == 15);
+    REQUIRE(checksum(-1) == -1);
+    REQUIRE(checksum(0) == -1);
     REQUIRE(checksum(120995) == 26);
 }
 
 int main(int argc, char* argv[])
 {
-    std::cout << "Quersumme: " << quersumme << std::endl;
     return Catch::Session().run(argc, argv)
 }

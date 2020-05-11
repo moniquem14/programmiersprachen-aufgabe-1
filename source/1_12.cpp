@@ -1,45 +1,43 @@
-#include <iostream>
 #define CATCH_CONFIG_RUNNER
-#include "catch.hpp"
-#include <cmath> 
+#include <catch.hpp>
+#include <cmath>
 
-float berech_o(float h, float r)
-{
-    float O, V;
-    float pi;
-    pi = 3.14;
-
-    O = 2 * r * h * pi + 2 * (r * r) * pi;
-    return 0;
+// Berechnung des Volumens eines Zylinders
+double cyl_volume(double rad, double hgt) {
+    if (rad < 0 || hgt < 0) {
+        return -1;
+    }
+    return hgt * (M_PI * rad * rad);
 }
 
-float berech_v(float h, float r)
-{
-    float O, V;
-    float pi;
-    pi = 3.14;
-
-    V = (r * r) * h * pi;
-    return 0;
+// Berechnung der Oberflaeche eines Zylinders
+double cyl_surface(double rad, double hgt) {
+    if (rad < 0 || hgt < 0) {
+        return -1;
+    }
+    return (2 * M_PI * rad * hgt) + (2 * M_PI * rad * rad);
+}
 }
 
-TEST_CASE("describe_berech_o", "[berech_o]")
-{
-    REQUIRE(berech(6, 9) == 848.23);
-    REQUIRE(berech(13, 9) == 1244.071);
-    REQUIRE(berech(3, 24) == 4071.504);
+// TDD Volumen
+TEST_CASE("describe_cyl_volume", "[cyl_volume]") {
+    REQUIRE(cyl_volume(1, 1) == Approx(3.14159));
+    REQUIRE(cyl_volume(-1, 1) == -1);
+    REQUIRE(cyl_volume(1, -1) == -1);
+    REQUIRE(cyl_volume(0, 0) == 0);
+    REQUIRE(cyl_volume(13, 7) == Approx(3716.5));
 }
 
-TEST_CASE("describe_berech_v", "[berech_v]")
-{
-    REQUIRE(berech(6, 9) == 1526.814);
-    REQUIRE(berech(13, 9) == 3308.097);
-    REQUIRE(berech(3, 24) == 5428.672);
+// TTD Oberflaeche
+TEST_CASE("describe_cyl_surface", "[cyl_surface]") {
+    REQUIRE(cyl_surface(1, 1) == Approx(12.5664));
+    REQUIRE(cyl_surface(-1, 1) == -1);
+    REQUIRE(cyl_surface(1, -1) == -1);
+    REQUIRE(cyl_surface(0, 0) == 0);
+    REQUIRE(cyl_surface(13, 7) == Approx(1633.63));
 }
 
 int main(int argc, char* argv[])
 {
-    std::cout << "Oberflaeche: " << O;
-    std::cout << "Volumen: " << V;
     return Catch::Session().run(argc, argv);
 }

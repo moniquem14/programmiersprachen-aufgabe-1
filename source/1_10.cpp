@@ -1,34 +1,32 @@
-#include <iostream>
 #define CATCH_CONFIG_RUNNER
-#include "catch.hpp"
-#include <cmath>
+#include <iostream>
+#include <catch.hpp>
 
-int sum_multiples()
-{
-    int summe = 0, j = 1;
 
-    while (j <= 1000)
-    {
-
-        if (j % 3 == 0 || j % 5 == 0)
-        {
-            summe += j;
-        }
-
-        j++; // Zählvariable erhöhen, sonst hätten wir eine endlosschleife
+int sum_multiples(int k) {
+    int sum = 0;
+    for (int i = 1; i <= k; i++) {
+        if (i % 3 == 0 || i % 5 == 0)
+            sum = sum + i;
     }
-
-    return summe;
+    if (k < 1 || k>1000) {
+        std::cout << "Fehler! Erlaubt sind positive Ganzzahlen bis 1000." << std::endl;
+        return -1;
+    }
+    return sum;
 }
 
 
-TEST_CASE("describe_sum_multiples", "[sum_multiples]")
-{
-    REQUIRE(sum_multiples() == );
+TEST_CASE("describe_sum_multipes", "[sum_multiples]") {
+    REQUIRE(sum_multiples(999) == 233168);
+    REQUIRE(sum_multiples(1001) == -1);
+    REQUIRE(sum_multiples(1) == 0);
+    REQUIRE(sum_multiples(-1) == -1);
+    REQUIRE(sum_multiples(0) == -1);
+
 }
 
 int main(int argc, char* argv[])
 {
-    std::cout << summe << std::endl;
     return Catch::Session().run(argc, argv);
 }

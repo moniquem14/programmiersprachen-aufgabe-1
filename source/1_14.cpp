@@ -1,21 +1,30 @@
-#include <iostream>
 #define CATCH_CONFIG_RUNNER
-#include "catch.hpp"
-#include <cmath>
+#include <catch.hpp>
 
-bool is_prime(int Number)
-{
-    for (int i = 2; i <= Number - 1; i++)
-    {
-        if (Number % i == 0) return true;
+
+bool is_prime(int p) {
+    if (p <= 1)
+        return false;
+    if (p == 2)
+        return true;
+    for (int i = 2; i <= sqrt(p); i++) {
+        if (p % i == 0)
+            return false;
     }
-    return false;
+    return true;
 }
 
-TEST_CASE("describe_is_prime", "[is_prime]")
-{
-    REQUIRE(is_prime(34) == false);
-    REQUIRE(is_prime(13) == true);
+
+TEST_CASE(" is_prime ", "[is_prime(int)]") {
+    REQUIRE(!is_prime(-1));
+    REQUIRE(!is_prime(0));
+    REQUIRE(!is_prime(1));
+    REQUIRE(is_prime(2));
+    REQUIRE(is_prime(3));
+    REQUIRE(is_prime(7));
+    REQUIRE(!is_prime(11));
+    REQUIRE(is_prime(42));
+
 }
 
 int main(int argc, char* argv[])
