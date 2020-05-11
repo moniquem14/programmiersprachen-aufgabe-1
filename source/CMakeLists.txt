@@ -14,6 +14,22 @@ add_executable(1.15 1.15.cpp)
 
 add_executable(1.9 1.9.cpp)
 
+add_executable(1.10 1.10.cpp)
+
+add_executable(1.12 1.12.cpp)
+
+add_executable(1.13 1.13.cpp)
+
+add_executable(1.14 1.14.cpp)
+
+add_executable(1.15 1.15.cpp)
+
+
+
+
+
+
+
 
 
 

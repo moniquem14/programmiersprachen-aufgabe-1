@@ -1,6 +1,6 @@
 #include <iostream>
 
-int main()
+int main ()
 {
     int num = 20, flag = 0;
 
