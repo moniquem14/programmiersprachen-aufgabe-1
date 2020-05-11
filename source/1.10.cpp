@@ -29,6 +29,6 @@ TEST_CASE("describe_sum_multiples", "[sum_multiples]")
 
 int main(int argc, char* argv[])
 {
+    std::cout << summe << std::endl;
     return Catch::Session().run(argc, argv);
-    std::cout << summe;
 }

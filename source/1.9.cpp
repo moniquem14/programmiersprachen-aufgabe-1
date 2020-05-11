@@ -13,7 +13,6 @@ int checksum(int a)
         a /= 10;
     }
 
-    std::cout << "Quersumme: " << quersumme << std::endl;
 
     return 0;
 }
@@ -27,5 +26,6 @@ TEST_CASE("describe_checksum", "[checksum]")
 
 int main(int argc, char* argv[])
 {
+    std::cout << "Quersumme: " << quersumme << std::endl;
     return Catch::Session().run(argc, argv)
 }

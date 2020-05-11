@@ -7,7 +7,6 @@ double fract(double a)
 {
 	double i;
 	double f = modf(a, &i);
-	std::cout << f;
 	return f;
 }
 
@@ -20,5 +19,6 @@ TEST_CASE("describe_fract", "[fract]")
 
 int main(int argc, char* argv[])
 {
+	std::cout << f << std::endl;
 	return Catch::Session().run(argc, argv);
 }

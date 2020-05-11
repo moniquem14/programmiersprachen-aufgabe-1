@@ -10,7 +10,6 @@ float berech_o(float h, float r)
     pi = 3.14;
 
     O = 2 * r * h * pi + 2 * (r * r) * pi;
-    std::cout << "Oberflaeche: " << O;
     return 0;
 }
 
@@ -21,7 +20,6 @@ float berech_v(float h, float r)
     pi = 3.14;
 
     V = (r * r) * h * pi;
-    std::cout << "Volumen: " << V;
     return 0;
 }
 
@@ -41,5 +39,7 @@ TEST_CASE("describe_berech_v", "[berech_v]")
 
 int main(int argc, char* argv[])
 {
+    std::cout << "Oberflaeche: " << O;
+    std::cout << "Volumen: " << V;
     return Catch::Session().run(argc, argv);
 }

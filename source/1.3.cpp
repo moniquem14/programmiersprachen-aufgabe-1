@@ -13,7 +13,7 @@ int main ()
 
         {
             flag = 1;
-            std::cout << " lowest divisible number upto 20 is  " << num << std::endl;
+            std::cout << " kleinster gemeinsamer Teiler bis 20 ist:  " << num << std::endl;
         }
 
         num++;

@@ -9,11 +9,11 @@ double mile_to_kilometer(double meile)
     kilometer = 1, 60934;
 
     kilometer = kilometer * meile;
-    std::cout << meile << " Meilen sind\n " << kilometer << " Kilometer\n";
     return kilometer;
 }
 
 int main()
 {
     double mile_to_kilometer(45);
+    std::cout << kilometer << " km" << std::endl;
 }

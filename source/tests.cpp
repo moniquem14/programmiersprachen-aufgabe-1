@@ -22,5 +22,6 @@ TEST_CASE("describe_gcd", "[gcd]")
 
 int main(int argc, char* argv[])
 {
-  return Catch::Session().run(argc, argv);
+    std::cout << gcd(b, a % b) << std::endl;
+    return Catch::Session().run(argc, argv);
 }

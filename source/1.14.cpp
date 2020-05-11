@@ -20,5 +20,6 @@ TEST_CASE("describe_is_prime", "[is_prime]")
 
 int main(int argc, char* argv[])
 {
+    
     return Catch::Session().run(argc, argv);
 }

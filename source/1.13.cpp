@@ -10,8 +10,6 @@ int factorial(int n)
     for (c = 1; c <= n; c++)
         f = f * c;
 
-    std::cout << "Factorial of\n" << n << f;
-
     return 0;
 }
 
@@ -23,6 +21,6 @@ TEST_CASE("describe_factorial", "[factorial]")
 
 int main(int argc, char* argv[])
 {
+    std::cout << f << std::endl;
     return Catch::Session().run(argc, argv)
-        int factorial(6);
 }
