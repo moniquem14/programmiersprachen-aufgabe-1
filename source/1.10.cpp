@@ -24,7 +24,7 @@ int sum_multiples()
 
 TEST_CASE("describe_sum_multiples", "[sum_multiples]")
 {
-    REQUIRE(sum_multiples());
+    REQUIRE(sum_multiples() == );
 }
 
 int main(int argc, char* argv[])
