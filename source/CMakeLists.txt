@@ -10,7 +10,7 @@ add_executable(1_3 1_3.cpp)
 
 add_executable(1_15 1_15.cpp)
 
-add_executable(1_9 1:9.cpp)
+add_executable(1_9 1_9.cpp)
 
 add_executable(1_10 1_10.cpp)
 
@@ -19,8 +19,6 @@ add_executable(1_12 1_12.cpp)
 add_executable(1_13 1_13.cpp)
 
 add_executable(1_14 1_14.cpp)
-
-add_executable(1_15 1_15.cpp)
 
 add_executable(1_11 1_11.cpp)
 
